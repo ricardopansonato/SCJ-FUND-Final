@@ -20,9 +20,11 @@ public class HelpCommand implements Command {
 	
 	@Override
 	public void execute() {
-		System.out.println(update.message().chat().id());
-		bot.execute(new SendMessage(update.message().chat().id(), "Help"));
-		bot.execute(new SendChatAction(update.message().chat().id(), ChatAction.typing.name()));
+		if (update.message() != null) {
+			System.out.println(update.message().chat().id());
+			bot.execute(new SendMessage(update.message().chat().id(), "Help"));
+			bot.execute(new SendChatAction(update.message().chat().id(), ChatAction.typing.name()));
+		}
 	}
 
 }

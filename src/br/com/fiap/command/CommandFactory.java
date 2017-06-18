@@ -8,12 +8,13 @@ import br.com.fiap.command.impl.HelpCommand;
 
 public class CommandFactory {
 	public Command createCommand(TelegramBot bot, Update update) {
-		if (update.message().text().startsWith("/start")) {
-			return new CreateCommand(bot, update);
-		} else if (update.message().text().startsWith("/help")) {
-			return new HelpCommand(bot, update);
-		} else {
-			return new HelpCommand(bot, update);
+		if (update.message() != null) {
+			if (update.message().text().startsWith("/start")) {
+				return new CreateCommand(bot, update);
+			} else if (update.message().text().startsWith("/help")) {
+				return new HelpCommand(bot, update);
+			}
 		}
+		return new HelpCommand(bot, update);
 	}
 }
