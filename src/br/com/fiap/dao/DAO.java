@@ -36,6 +36,16 @@ public class DAO {
 			}
 		}
 	}
+
+	public void addUserAccount(Long chatId, User user) {
+		synchronized (REPOSITORY) {
+			//if (REPOSITORY.get(chatId) == null) {
+				Pair<User, List<AccountStatement>> data = Pair.of(user, new ArrayList<>());
+				REPOSITORY.put(chatId, data);
+			//}
+		}
+	}
+
 	
 	public void addDepedent(Long chatId, Dependent dependent) {
 		synchronized (REPOSITORY) {
@@ -47,4 +57,17 @@ public class DAO {
 			}
 		}
 	}
+	
+	public User getUser(Long chatId) {
+		synchronized (REPOSITORY) {
+			if (REPOSITORY.get(chatId) != null) {
+				User user = REPOSITORY.get(chatId).getKey();
+				return user;
+//				Pair<User, List<AccountStatement>> data = Pair.of(user, REPOSITORY.get(chatId).getValue());
+//				REPOSITORY.put(chatId, data);
+			}
+		}
+		return null;
+	}
+
 }
