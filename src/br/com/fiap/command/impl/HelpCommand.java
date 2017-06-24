@@ -2,29 +2,18 @@ package br.com.fiap.command.impl;
 
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.model.Update;
-import com.pengrad.telegrambot.model.request.ChatAction;
-import com.pengrad.telegrambot.request.SendChatAction;
-import com.pengrad.telegrambot.request.SendMessage;
 
 import br.com.fiap.command.Command;
 
-public class HelpCommand implements Command {
-	
-	private TelegramBot bot;
-	private Update update;
-
+public class HelpCommand extends Command {
+		
 	public HelpCommand(TelegramBot bot, Update update) {
-		this.bot = bot;
-		this.update = update;
+		super(bot, update);
 	}
-	
-	@Override
+
 	public void execute() {
-		System.out.println(update.message().chat().id());
-		bot.execute(new SendMessage(update.message().chat().id(), "Help"));
-		bot.execute(new SendMessage(update.message().chat().id(), "Para Criar uma Conta, digite /create"));
-		bot.execute(new SendMessage(update.message().chat().id(), "Para Consultar os dados da sua Conta, digite /show"));
-		bot.execute(new SendChatAction(update.message().chat().id(), ChatAction.typing.name()));
+		System.out.println(readValue("Digite um número", "Formato inválido!", "[0-9]{1,}"));
+		System.out.println(readValue("Digite um texto", "Formato de texto inválido!", ".{1,}"));
 	}
 
 }

@@ -1,52 +1,39 @@
 package br.com.fiap.command.impl;
 
-import java.util.List;
-
-import org.apache.commons.lang3.tuple.Pair;
-
 import com.pengrad.telegrambot.TelegramBot;
+import com.pengrad.telegrambot.model.Chat;
 import com.pengrad.telegrambot.model.Update;
-import com.pengrad.telegrambot.model.request.ChatAction;
-import com.pengrad.telegrambot.request.SendChatAction;
+import com.pengrad.telegrambot.model.request.ParseMode;
 import com.pengrad.telegrambot.request.SendMessage;
 
 import br.com.fiap.command.Command;
-import br.com.fiap.dao.DAO;
-import br.com.fiap.model.AccountStatement;
-import br.com.fiap.model.User;
+import br.com.fiap.dao.TelegramFileDAO;
+import br.com.fiap.model.AccountUser;
 
-public class WelcomeCommand implements Command {
+public class WelcomeCommand extends Command {
 	
-	private TelegramBot bot;
-	private Update update;
-
 	public WelcomeCommand(TelegramBot bot, Update update) {
-		this.bot = bot;
-		this.update = update;
+		super(bot, update);
 	}
-	
+
 	@Override
 	public void execute() {
-		
-		DAO dao = new DAO();
-		User user = new User();
-		Pair<User, List<AccountStatement>> data = dao.getUserInformation(update.message().chat().id());
-		if (data == null) {
-			user.setName(update.message().chat().firstName() + " " + update.message().chat().lastName());
-			dao.addUser(update.message().chat().id(), user);
-		}
-		bot.execute(new SendChatAction(update.message().chat().id(), ChatAction.typing.name()));
-		StringBuilder sb = new StringBuilder();
-		if (data == null) {
-			sb.append("Olá, ").append(user.getName()).append(", s");
+		TelegramFileDAO dao = new TelegramFileDAO();
+		Chat chat = update.message().chat();
+		Long chatId = chat.id();
+		AccountUser user = dao.getUser(chatId);
+		if (user.isEmpty()) {
+			StringBuilder sb = new StringBuilder();
+			sb.append("*Olá ").append(chat.firstName()).append(" ");
+			sb.append(chat.lastName()).append("*, bem vindo ao banco *FIAP TRABALHO FINAL*!\n");
+			sb.append("Para iniciar a utilização dos nossos serviços,\nexecute */create* realizar o cadastro.");
+			SendMessage request = new SendMessage(chatId, sb.toString())
+					.parseMode(ParseMode.Markdown);
+			bot.execute(request);
 		} else {
-			sb.append("S");
+			SendMessage request = new SendMessage(chatId, user.welcomeMessage()).parseMode(ParseMode.Markdown);
+			bot.execute(request);
 		}
-		sb.append("eja bem-vindo ao BANCO FIAP !");
-		bot.execute(new SendMessage(update.message().chat().id(), sb.toString()));
-		
-		sb.append("ara que possa ajudá-lo, digite /help e veja a opção que melhor te atende.");
-		bot.execute(new SendMessage(update.message().chat().id(), "Para que possa ajudá-lo, digite /help e veja a opção que melhor te atende."));
 	}
 
 }

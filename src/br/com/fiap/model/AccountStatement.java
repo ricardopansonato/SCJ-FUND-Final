@@ -1,6 +1,11 @@
 package br.com.fiap.model;
 
-public class AccountStatement {
+import java.io.Serializable;
+
+public class AccountStatement implements Serializable {
+
+	private static final long serialVersionUID = -2910473057541978965L;
+	
 	private AccountStatementType type;
 	private Double value;
 
