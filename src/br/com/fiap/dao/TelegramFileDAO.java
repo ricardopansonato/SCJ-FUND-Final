@@ -15,14 +15,16 @@ import java.util.Map;
 
 import org.apache.commons.lang3.tuple.Pair;
 
+import br.com.fiap.exception.OperationNotAllowed;
 import br.com.fiap.model.AccountStatement;
+import br.com.fiap.model.AccountStatementType;
 import br.com.fiap.model.Dependent;
 import br.com.fiap.model.AccountUser;
 
 @SuppressWarnings("unchecked")
 public class TelegramFileDAO {
 	private static Map<Long, Pair<AccountUser, List<AccountStatement>>> REPOSITORY = new HashMap<>();
-	private static final String FILE = "repository.txt";
+	private static final String FILE = "repository.dat";
 
 	static {
 		try (FileInputStream fi = new FileInputStream(new File(FILE));
@@ -63,7 +65,7 @@ public class TelegramFileDAO {
 		}
 	}
 
-	public void addAccountStatement(Long chatId, AccountStatement statement) {
+	public void addAccountStatement(Long chatId, AccountStatement statement) throws OperationNotAllowed {
 		synchronized (REPOSITORY) {
 			Pair<AccountUser, List<AccountStatement>> data = REPOSITORY.get(chatId);
 			if (data != null) {
@@ -74,6 +76,12 @@ public class TelegramFileDAO {
 				} else {
 					statements.add(statement);
 				}
+				
+				if (statement.getType().equals(AccountStatementType.LOAN)) {
+					user.addLoanBalance(statement.getValue());
+				}
+				
+				user.addAmount(statement.getValue());
 				data = Pair.of(user, statements);
 				REPOSITORY.put(chatId, data);
 				writeFile();

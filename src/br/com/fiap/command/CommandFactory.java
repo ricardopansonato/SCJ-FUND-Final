@@ -3,13 +3,17 @@ package br.com.fiap.command;
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.model.Update;
 
+import br.com.fiap.command.impl.AccountStatementsCommand;
 import br.com.fiap.command.impl.CreateAccountCommand;
 import br.com.fiap.command.impl.CreateDependentAccountCommand;
 import br.com.fiap.command.impl.DepositCommand;
 import br.com.fiap.command.impl.HelpCommand;
+import br.com.fiap.command.impl.LoanCommand;
+import br.com.fiap.command.impl.ListLoanCommand;
 import br.com.fiap.command.impl.ModifyAccountCommand;
 import br.com.fiap.command.impl.ShowAccountCommand;
 import br.com.fiap.command.impl.WelcomeCommand;
+import br.com.fiap.command.impl.WithdrawCommand;
 
 public class CommandFactory {
 	public Command createCommand(TelegramBot bot, Update update) {
@@ -24,11 +28,19 @@ public class CommandFactory {
 			    return new ShowAccountCommand(bot, update);
 		    } else if (update.message().text().startsWith("/deposit")) { 
 			    return new DepositCommand(bot, update);
+		    } else if (update.message().text().startsWith("/withdraw")) { 
+			    return new WithdrawCommand(bot, update);
 		    } else if (update.message().text().startsWith("/modify")) { 
 			    return new ModifyAccountCommand(bot, update);
+		    } else if (update.message().text().startsWith("/statements")) { 
+			    return new AccountStatementsCommand(bot, update);
 		    } else if (update.message().text().startsWith("/dependent")) { 
 			    return new CreateDependentAccountCommand(bot, update);
-		    }  
+		    } else if (update.message().text().startsWith("/loan")) { 
+			    return new LoanCommand(bot, update);
+		    } else if (update.message().text().startsWith("/list_loan")) { 
+			    return new ListLoanCommand(bot, update);
+		    }
 		}
 		return new HelpCommand(bot, update);
 		

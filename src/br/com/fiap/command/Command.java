@@ -19,13 +19,13 @@ import br.com.fiap.model.AccountUser;
 public abstract class Command {
 
 	public static final String DEFAULT = "padrão";
+	public static final String KEEP = "manter";
+	
 	public static final String NAME_PATTERN = ".{3,}";
 	public static final String CPF_PATTERN = "[0-9]{11}";
 	public static final String DATE_PATTERN = "[0-9]{2}/[0-9]{2}/[0-9]{4}";
-
-	public static final String NUMBER_PATTERN = "[0-9.,]{1,}";
-
-	public static final String KEEP = "manter";
+	public static final String DECIMAL_PATTERN = "[0-9.,]{1,}";
+	public static final String NUMBER_PATTERN = "[0-9]{1,}";
 	public static final String CPF_MODIFY_PATTERN = "(?i)([0-9]{11}|manter)";
 	public static final String DATE_MODIFY_PATTERN = "(?i)([0-9]{2}/[0-9]{2}/[0-9]{4}|manter)";
 	

@@ -17,10 +17,13 @@ import br.com.fiap.exception.OperationNotAllowed;
 import br.com.fiap.model.AccountStatement;
 import br.com.fiap.model.AccountStatementType;
 import br.com.fiap.model.AccountUser;
+import br.com.fiap.model.LoanStatement;
 
-public class DepositCommand extends Command {
-
-	public DepositCommand(TelegramBot bot, Update update) {
+public class LoanCommand extends Command {
+	
+	private static final Double LOAN_TAX = 15d;
+	
+	public LoanCommand(TelegramBot bot, Update update) {
 		super(bot, update);
 	}
 
@@ -31,21 +34,50 @@ public class DepositCommand extends Command {
 		Pair<AccountUser,List<AccountStatement>> data = dao.getUserInformation(chatId);
 		AccountUser user = data.getKey();
 		if (!user.isEmpty()) {
-			Double value = null;
 			NumberFormat numberFormat = NumberFormat.getNumberInstance(new Locale("pt", "BR"));
-			String valueText = readValue("Valor informar o valor que deve ser depositado", "Valor inválido!", DECIMAL_PATTERN);
+			String valueText = readValue("Valor informar o valor de empréstimo", "Valor inválido!", DECIMAL_PATTERN);
+			Double value = null;
 			while(value == null) {
 				try {
 					value = numberFormat.parse(valueText).doubleValue();
+					if (value > (user.getAccountBalance() * 40 - user.getLoanBalance())) {
+						value = null;
+						valueText = readValue("Valor não deve exceder 40x o saldo em conta!", "Valor inválido!", DECIMAL_PATTERN);
+					}
 				} catch (Exception e) {
 					valueText = readValue("Valor inválido!", "Valor inválido!", DECIMAL_PATTERN);
 				}
 			}
-			AccountStatement statement = new AccountStatement();
-			statement.setType(AccountStatementType.DEPOSIT);
-			statement.setValue(value);
+			
+			String installmentsText = readValue("Número de prestações", "Valor inválido!", NUMBER_PATTERN);
+			Integer installments = null;
+			while(installments == null) {
+				try {
+					installments = numberFormat.parse(installmentsText).intValue();
+					if (installments > 36) {
+						installments = null;
+						installmentsText = readValue("Número de prestações não deve exceder 36x", "Valor inválido!", NUMBER_PATTERN);
+					}
+				} catch (Exception e) {
+					installmentsText = readValue("Valor inválido!", "Valor inválido!", NUMBER_PATTERN);
+				}
+			}
+			
 			try {
+				if (user.getAccountBalance() - LOAN_TAX < 0 ) {
+					throw new OperationNotAllowed("Saldo insuficiente!");
+				}
+				final LoanStatement statement = new LoanStatement();
+				statement.setType(AccountStatementType.LOAN);
+				statement.setValue(value);
+				statement.setMonths(installments);
 				dao.addAccountStatement(chatId, statement);
+				
+				final AccountStatement statementTax = new AccountStatement();
+				statementTax.setType(AccountStatementType.LOAN_TAX);
+				statementTax.setValue(LOAN_TAX);
+				dao.addAccountStatement(chatId, statementTax);
+				
 				data = dao.getUserInformation(chatId);
 				user = data.getKey();
 				SendMessage request = new SendMessage(chatId, "*Operação realizada com sucesso!\nSaldo atual:* " + user.getFormattedAccountBalance()).parseMode(ParseMode.Markdown);
@@ -57,6 +89,7 @@ public class DepositCommand extends Command {
 				SendMessage request = new SendMessage(chatId,  sb.toString()).parseMode(ParseMode.Markdown);
 				bot.execute(request);
 			}
+			
 		} else {
 			SendMessage request = new SendMessage(chatId, "*Conta não existe!*\nFavor executar o */create* para adicionar as informações").parseMode(ParseMode.Markdown);
 			bot.execute(request);
