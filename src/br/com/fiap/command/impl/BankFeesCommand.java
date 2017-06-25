@@ -1,6 +1,10 @@
 package br.com.fiap.command.impl;
 
+import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.atomic.DoubleAdder;
 
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -12,12 +16,12 @@ import com.pengrad.telegrambot.request.SendMessage;
 
 import br.com.fiap.command.Command;
 import br.com.fiap.model.AccountStatement;
+import br.com.fiap.model.AccountStatementType;
 import br.com.fiap.model.AccountUser;
-import br.com.fiap.model.LoanStatement;
 
-public class ListLoanCommand extends Command {
-	
-	public ListLoanCommand(TelegramBot bot, Update update) {
+public class BankFeesCommand extends Command {
+
+	public BankFeesCommand(TelegramBot bot, Update update) {
 		super(bot, update);
 	}
 
@@ -29,22 +33,38 @@ public class ListLoanCommand extends Command {
 		AccountUser user = data.getKey();
 		if (!user.isEmpty()) {
 			final StringBuffer sb = new StringBuffer();
-			if (user.getLoanBalance() > 0) {
+			if (data.getRight().size() > 0) {
 				sb.append("```------------------------\n")
-				  .append("EMPRÉSTIMOS\n")
+				  .append("TAXAS E SERVIÇOS\n")
 				  .append("------------------------\n");
+				
+				final NumberFormat numberFormat = NumberFormat.getCurrencyInstance(new Locale ("pt", "BR"));
+				for (AccountStatementType type : AccountStatementType.values()) {
+					if (type.getValue() > 0) {
+						sb.append(type.getOperation()).append(": ")
+						  .append(numberFormat.format(type.getValue()))
+						  .append("\n");
+					}
+				}
+				
+				sb.append("------------------------\n");
+				final List<Double> values = new ArrayList<>();
 				data.getValue().forEach(a -> {
-					if (a instanceof LoanStatement) {
-						LoanStatement l = (LoanStatement) a;
-						sb.append(l.installments())
+					if(a.getType().equals(AccountStatementType.WITHDRAW_TAX) || 
+							a.getType().equals(AccountStatementType.LOAN_TAX) ||
+							a.getType().equals(AccountStatementType.ACCOUNT_STATEMENTS_TAX)) {
+						values.add(a.getValue());
+						sb.append(a.toString())
 						  .append("------------------------\n");
 					}
 				});
-				sb.append("```\n");
+				final DoubleAdder sumAdder = new DoubleAdder();
+				values.parallelStream().forEach(sumAdder::add);
+				sb.append("Total: ").append(numberFormat.format(sumAdder.doubleValue())).append("```\n");
 				SendMessage request = new SendMessage(chatId,  sb.toString()).parseMode(ParseMode.Markdown);
 				bot.execute(request);
 			} else {
-				sb.append("Não foi realizado nenhum empréstimo\n");
+				sb.append("Não foi realizado nenhum lançamento\n");
 				SendMessage request = new SendMessage(chatId,  sb.toString()).parseMode(ParseMode.Markdown);
 				bot.execute(request);
 			}

@@ -20,8 +20,6 @@ import br.com.fiap.model.AccountUser;
 
 public class WithdrawCommand extends Command {
 	
-	private static final Double WITHDRAW_TAX = 2.5;
-	
 	public WithdrawCommand(TelegramBot bot, Update update) {
 		super(bot, update);
 	}
@@ -48,14 +46,14 @@ public class WithdrawCommand extends Command {
 				final AccountStatement statement = new AccountStatement();
 				statement.setType(AccountStatementType.WITHDRAW);
 				statement.setValue(value);
-				if (user.getAccountBalance() + (statement.getValue() - WITHDRAW_TAX) < 0 ) {
+				if (user.getAccountBalance() + (statement.getValue() - AccountStatementType.WITHDRAW_TAX.getValue()) < 0 ) {
 					throw new OperationNotAllowed("Saldo insuficiente!");
 				}
 				dao.addAccountStatement(chatId, statement);
 
 				final AccountStatement statementTax = new AccountStatement();
 				statementTax.setType(AccountStatementType.WITHDRAW_TAX);
-				statementTax.setValue(WITHDRAW_TAX);
+				statementTax.setValue(AccountStatementType.WITHDRAW_TAX.getValue());
 				dao.addAccountStatement(chatId, statementTax);
 				
 				data = dao.getUserInformation(chatId);

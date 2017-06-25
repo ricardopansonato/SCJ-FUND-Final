@@ -4,6 +4,9 @@ import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.model.Update;
 
 import br.com.fiap.command.impl.AccountStatementsCommand;
+import br.com.fiap.command.impl.BankDraftCommand;
+import br.com.fiap.command.impl.BankFeesCommand;
+import br.com.fiap.command.impl.BankPostingCommand;
 import br.com.fiap.command.impl.CreateAccountCommand;
 import br.com.fiap.command.impl.CreateDependentAccountCommand;
 import br.com.fiap.command.impl.DepositCommand;
@@ -40,6 +43,12 @@ public class CommandFactory {
 			    return new LoanCommand(bot, update);
 		    } else if (update.message().text().startsWith("/list_loan")) { 
 			    return new ListLoanCommand(bot, update);
+		    } else if (update.message().text().startsWith("/bank_draft")) { 
+			    return new BankDraftCommand(bot, update);
+		    } else if (update.message().text().startsWith("/bank_fees")) { 
+			    return new BankFeesCommand(bot, update);
+		    } else if (update.message().text().startsWith("/bank_posting")) { 
+			    return new BankPostingCommand(bot, update);
 		    }
 		}
 		return new HelpCommand(bot, update);

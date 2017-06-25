@@ -18,8 +18,6 @@ import br.com.fiap.model.AccountUser;
 
 public class AccountStatementsCommand extends Command {
 	
-	private static final Double ACCOUNT_STATEMENTS_TAX = 1d;
-	
 	public AccountStatementsCommand(TelegramBot bot, Update update) {
 		super(bot, update);
 	}
@@ -34,9 +32,9 @@ public class AccountStatementsCommand extends Command {
 			try {
 				AccountStatement statement = new AccountStatement();
 				statement.setType(AccountStatementType.ACCOUNT_STATEMENTS_TAX);
-				statement.setValue(ACCOUNT_STATEMENTS_TAX);
+				statement.setValue(AccountStatementType.ACCOUNT_STATEMENTS_TAX.getValue());
 				
-				if (user.getAccountBalance() + (statement.getValue() - ACCOUNT_STATEMENTS_TAX) < 0 ) {
+				if (user.getAccountBalance() - AccountStatementType.ACCOUNT_STATEMENTS_TAX.getValue() < 0 ) {
 					throw new OperationNotAllowed("Saldo insuficiente!");
 				}
 				
@@ -48,7 +46,7 @@ public class AccountStatementsCommand extends Command {
 				  .append("EXTRATO\n")
 				  .append("------------------------\n");
 				data.getValue().forEach(a -> {
-					sb.append(a.toString())
+					sb.append(((AccountStatement)a).toString())
 					  .append("------------------------\n");
 				});
 				sb.append("Saldo atual: ").append(user.getFormattedAccountBalance()).append("```\n");

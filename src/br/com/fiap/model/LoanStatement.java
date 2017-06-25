@@ -20,8 +20,7 @@ public class LoanStatement extends AccountStatement {
 		this.months = months;
 	}
 
-	@Override
-	public String toString() {
+	public String installments() {
 		final NumberFormat numberFormat = NumberFormat.getCurrencyInstance(new Locale ("pt", "BR"));
 		final DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		final StringBuilder sb = new StringBuilder(super.toString());

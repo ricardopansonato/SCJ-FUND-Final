@@ -21,8 +21,6 @@ import br.com.fiap.model.LoanStatement;
 
 public class LoanCommand extends Command {
 	
-	private static final Double LOAN_TAX = 15d;
-	
 	public LoanCommand(TelegramBot bot, Update update) {
 		super(bot, update);
 	}
@@ -64,7 +62,7 @@ public class LoanCommand extends Command {
 			}
 			
 			try {
-				if (user.getAccountBalance() - LOAN_TAX < 0 ) {
+				if (user.getAccountBalance() - AccountStatementType.LOAN_TAX.getValue() < 0 ) {
 					throw new OperationNotAllowed("Saldo insuficiente!");
 				}
 				final LoanStatement statement = new LoanStatement();
@@ -75,7 +73,7 @@ public class LoanCommand extends Command {
 				
 				final AccountStatement statementTax = new AccountStatement();
 				statementTax.setType(AccountStatementType.LOAN_TAX);
-				statementTax.setValue(LOAN_TAX);
+				statementTax.setValue(AccountStatementType.LOAN_TAX.getValue());
 				dao.addAccountStatement(chatId, statementTax);
 				
 				data = dao.getUserInformation(chatId);
