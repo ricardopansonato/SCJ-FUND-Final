@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.0" icons="true" automaticImage="PNG" generate-combined-fragments="true">  
+  <object id="1" language="java" name="br.com.fiap.bot.FiapTelegramBot" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/bot/FiapTelegramBot.java" binary="false" label="fiapTelegramBot" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="128" y="0"/>    
+    <execution id="2">      
+      <position height="63" width="0" x="0" y="115"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="63" width="0" x="0" y="327"/>    
+    </execution>  
+  </object>  
+  <object id="8" language="java" name="br.com.fiap.command.Command" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/Command.java" binary="false" label="command" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="129" y="0"/>    
+    <execution id="9">      
+      <position height="84" width="0" x="0" y="230"/>    
+    </execution>    
+    <execution id="11">      
+      <position height="21" width="0" x="0" y="272"/>    
+    </execution>    
+    <execution id="12">      
+      <position height="84" width="0" x="0" y="967"/>    
+    </execution>    
+    <execution id="14">      
+      <position height="21" width="0" x="0" y="1009"/>    
+    </execution>    
+    <execution id="15">      
+      <position height="84" width="0" x="0" y="1065"/>    
+    </execution>    
+    <execution id="17">      
+      <position height="21" width="0" x="0" y="1107"/>    
+    </execution>    
+    <execution id="18">      
+      <position height="84" width="0" x="0" y="853"/>    
+    </execution>    
+    <execution id="20">      
+      <position height="21" width="0" x="0" y="895"/>    
+    </execution>  
+  </object>  
+  <object id="21" language="java" name="br.com.fiap.dao.TelegramFileDAO" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/dao/TelegramFileDAO.java" binary="false" label="telegramFileDAO" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="7">      
+      <position height="21" width="0" x="0" y="348"/>    
+    </execution>  
+  </object>  
+  <object id="22" language="java" name="br.com.fiap.command.CommandFactory" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/CommandFactory.java" binary="false" label="commandFactory" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="4">      
+      <position height="21" width="0" x="0" y="136"/>    
+    </execution>    
+    <execution id="23">      
+      <position height="84" width="0" x="0" y="217"/>    
+    </execution>    
+    <execution id="25">      
+      <position height="21" width="0" x="0" y="259"/>    
+    </execution>    
+    <execution id="26">      
+      <position height="63" width="0" x="0" y="476"/>    
+    </execution>    
+    <execution id="29">      
+      <position height="63" width="0" x="0" y="359"/>    
+    </execution>    
+    <execution id="32">      
+      <position height="63" width="0" x="0" y="321"/>    
+    </execution>    
+    <execution id="35">      
+      <position height="63" width="0" x="0" y="182"/>    
+    </execution>    
+    <execution id="38">      
+      <position height="63" width="0" x="0" y="543"/>    
+    </execution>    
+    <execution id="41">      
+      <position height="63" width="0" x="0" y="169"/>    
+    </execution>    
+    <execution id="44">      
+      <position height="63" width="0" x="0" y="312"/>    
+    </execution>    
+    <execution id="47">      
+      <position height="63" width="0" x="0" y="95"/>    
+    </execution>    
+    <execution id="50">      
+      <position height="63" width="0" x="0" y="439"/>    
+    </execution>    
+    <execution id="53">      
+      <position height="63" width="0" x="0" y="429"/>    
+    </execution>    
+    <execution id="56">      
+      <position height="63" width="0" x="0" y="611"/>    
+    </execution>    
+    <execution id="59">      
+      <position height="63" width="0" x="0" y="683"/>    
+    </execution>    
+    <execution id="62">      
+      <position height="63" width="0" x="0" y="754"/>    
+    </execution>    
+    <execution id="65">      
+      <position height="63" width="0" x="0" y="895"/>    
+    </execution>  
+  </object>  
+  <object id="68" language="java" name="br.com.fiap.command.impl.WithdrawCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/WithdrawCommand.java" binary="false" label="withdrawCommand" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="67">      
+      <position height="21" width="0" x="0" y="916"/>    
+    </execution>  
+  </object>  
+  <object id="69" language="java" name="br.com.fiap.command.impl.ShowAccountCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/ShowAccountCommand.java" binary="false" 
+    label="showAccountCommand" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="64">      
+      <position height="21" width="0" x="0" y="775"/>    
+    </execution>  
+  </object>  
+  <object id="70" language="java" name="br.com.fiap.command.impl.ModifyAccountCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/ModifyAccountCommand.java" binary="false" 
+    label="modifyAccountCommand" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="61">      
+      <position height="21" width="0" x="0" y="704"/>    
+    </execution>  
+  </object>  
+  <object id="71" language="java" name="br.com.fiap.command.impl.LoanCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/LoanCommand.java" binary="false" label="loanCommand" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="58">      
+      <position height="21" width="0" x="0" y="632"/>    
+    </execution>  
+  </object>  
+  <object id="72" language="java" name="br.com.fiap.command.impl.ListLoanCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/ListLoanCommand.java" binary="false" label="listLoanCommand" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="55">      
+      <position height="21" width="0" x="0" y="450"/>    
+    </execution>  
+  </object>  
+  <object id="73" language="java" name="br.com.fiap.command.impl.DepositCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/DepositCommand.java" binary="false" label="depositCommand" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="52">      
+      <position height="21" width="0" x="0" y="460"/>    
+    </execution>  
+  </object>  
+  <object id="74" language="java" name="br.com.fiap.command.impl.CreateDependentAccountCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/CreateDependentAccountCommand.java" binary="false" 
+    label="createDependentAccountCommand" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="49">      
+      <position height="21" width="0" x="0" y="116"/>    
+    </execution>  
+  </object>  
+  <object id="75" language="java" name="br.com.fiap.command.impl.BankPostingCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/BankPostingCommand.java" binary="false" 
+    label="bankPostingCommand" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="46">      
+      <position height="21" width="0" x="0" y="333"/>    
+    </execution>  
+  </object>  
+  <object id="76" language="java" name="br.com.fiap.command.impl.BankFeesCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/BankFeesCommand.java" binary="false" label="bankFeesCommand" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="43">      
+      <position height="21" width="0" x="0" y="190"/>    
+    </execution>  
+  </object>  
+  <object id="77" language="java" name="br.com.fiap.command.impl.BankDraftCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/BankDraftCommand.java" binary="false" label="bankDraftCommand" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="40">      
+      <position height="21" width="0" x="0" y="564"/>    
+    </execution>  
+  </object>  
+  <object id="78" language="java" name="br.com.fiap.command.impl.AccountStatementsCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/AccountStatementsCommand.java" binary="false" 
+    label="accountStatementsCommand" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="37">      
+      <position height="21" width="0" x="0" y="203"/>    
+    </execution>  
+  </object>  
+  <object id="79" language="java" name="br.com.fiap.command.impl.CreateAccountCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/CreateAccountCommand.java" binary="false" 
+    label="createAccountCommand" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="34">      
+      <position height="21" width="0" x="0" y="342"/>    
+    </execution>  
+  </object>  
+  <object id="80" language="java" name="br.com.fiap.command.impl.HelpCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/HelpCommand.java" binary="false" label="helpCommand" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="31">      
+      <position height="21" width="0" x="0" y="380"/>    
+    </execution>  
+  </object>  
+  <object id="81" language="java" name="br.com.fiap.command.impl.WelcomeCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/WelcomeCommand.java" binary="false" label="welcomeCommand" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="28">      
+      <position height="21" width="0" x="0" y="497"/>    
+    </execution>  
+  </object>  
+  <message id="3" 
+    operation="createCommand(com.pengrad.telegrambot.TelegramBot,com.pengrad.telegrambot.model.Update):br.com.fiap.command.Command" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="getPosition(java.lang.Long,java.lang.Integer):java.lang.Integer" asynchronous="false">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="10" operation="Command(com.pengrad.telegrambot.TelegramBot,com.pengrad.telegrambot.model.Update)" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>  
+  <message id="13" 
+    operation="checkUserInformation(org.apache.commons.lang3.tuple.Pair&lt;br.com.fiap.model.AccountUser,java.util.List&lt;br.com.fiap.model.AccountStatement&gt;&gt;):br.com.fiap.model.AccountUser" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="14"/>  
+  </message>  
+  <message id="16" operation="readValue(java.lang.String,java.lang.String,java.lang.String):java.lang.String" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="17"/>  
+  </message>  
+  <message id="19" 
+    operation="retrieveValue(java.lang.String,java.lang.String,br.com.fiap.model.AccountUser):java.lang.String" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="20"/>  
+  </message>  
+  <message id="24" 
+    operation="createCommand(com.pengrad.telegrambot.TelegramBot,com.pengrad.telegrambot.model.Update):br.com.fiap.command.Command" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="25"/>  
+  </message>  
+  <message id="27" operation="execute():void" asynchronous="false">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="28"/>  
+  </message>  
+  <message id="30" operation="execute():void" asynchronous="false">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="31"/>  
+  </message>  
+  <message id="33" operation="execute():void" asynchronous="false">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="34"/>  
+  </message>  
+  <message id="36" operation="execute():void" asynchronous="false">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="37"/>  
+  </message>  
+  <message id="39" operation="execute():void" asynchronous="false">    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="40"/>  
+  </message>  
+  <message id="42" operation="execute():void" asynchronous="false">    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="43"/>  
+  </message>  
+  <message id="45" operation="execute():void" asynchronous="false">    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="46"/>  
+  </message>  
+  <message id="48" operation="execute():void" asynchronous="false">    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="49"/>  
+  </message>  
+  <message id="51" operation="execute():void" asynchronous="false">    
+    <end type="SOURCE" refId="50"/>    
+    <end type="TARGET" refId="52"/>  
+  </message>  
+  <message id="54" operation="execute():void" asynchronous="false">    
+    <end type="SOURCE" refId="53"/>    
+    <end type="TARGET" refId="55"/>  
+  </message>  
+  <message id="57" operation="execute():void" asynchronous="false">    
+    <end type="SOURCE" refId="56"/>    
+    <end type="TARGET" refId="58"/>  
+  </message>  
+  <message id="60" operation="execute():void" asynchronous="false">    
+    <end type="SOURCE" refId="59"/>    
+    <end type="TARGET" refId="61"/>  
+  </message>  
+  <message id="63" operation="execute():void" asynchronous="false">    
+    <end type="SOURCE" refId="62"/>    
+    <end type="TARGET" refId="64"/>  
+  </message>  
+  <message id="66" operation="execute():void" asynchronous="false">    
+    <end type="SOURCE" refId="65"/>    
+    <end type="TARGET" refId="67"/>  
+  </message>
+</sequence-diagram>

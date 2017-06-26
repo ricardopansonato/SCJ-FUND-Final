@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.0" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="br.com.fiap.bot.FiapTelegramBot" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/bot/FiapTelegramBot.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="119" x="43" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="br.com.fiap.command.Command" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/Command.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="351" width="420" x="2891" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="br.com.fiap.command.CommandFactory" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/CommandFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="258" x="468" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="br.com.fiap.command.impl.AccountStatementsCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/AccountStatementsCommand.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="272" x="3181" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="br.com.fiap.command.impl.BankDraftCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/BankDraftCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="225" x="4811" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="br.com.fiap.command.impl.BankFeesCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/BankFeesCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="225" x="2217" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="br.com.fiap.command.impl.BankPostingCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/BankPostingCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="236" x="3493" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="br.com.fiap.command.impl.CreateAccountCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/CreateAccountCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="250" x="4268" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="br.com.fiap.command.impl.CreateDependentAccountCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/CreateDependentAccountCommand.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="302" x="825" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="br.com.fiap.command.impl.DepositCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/DepositCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="213" x="4558" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="br.com.fiap.command.impl.HelpCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/HelpCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="198" x="3769" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="br.com.fiap.command.impl.ListLoanCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/ListLoanCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="218" x="1167" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="br.com.fiap.command.impl.LoanCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/LoanCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="201" x="1425" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="br.com.fiap.command.impl.ModifyAccountCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/ModifyAccountCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="250" x="2891" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="br.com.fiap.command.impl.ShowAccountCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/ShowAccountCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="247" x="1930" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="br.com.fiap.command.impl.WelcomeCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/WelcomeCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="221" x="4007" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="br.com.fiap.command.impl.WithdrawCommand" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/command/impl/WithdrawCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="224" x="1666" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="br.com.fiap.dao.TelegramFileDAO" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/dao/TelegramFileDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="369" x="2482" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="br.com.fiap.model.AccountStatement" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/model/AccountStatement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="207" x="202" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="20" language="java" name="br.com.fiap.model.AccountStatementType" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/model/AccountStatementType.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="290" x="223" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="21" language="java" name="br.com.fiap.model.AccountUser" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/model/AccountUser.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="405" width="211" x="553" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="br.com.fiap.model.Dependent" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/model/Dependent.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="131" x="785" y="909"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="br.com.fiap.model.LoanStatement" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/model/LoanStatement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="140" x="43" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="br.com.fiap.model.Person" project="SCJ-FUND-Final" 
+    file="/SCJ-FUND-Final/src/br/com/fiap/model/Person.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="387" width="178" x="785" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="25">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="26">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="27">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="28">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="29">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="30">    
+    <bendpoint x="794" y="464"/>    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="31">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="32">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="33">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="34">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="35">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <association id="36">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="37" name="dao"/>      
+      <multiplicity id="38" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="39">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="40">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="41">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <association id="42">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="43" name="type"/>      
+      <multiplicity id="44" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="45">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <generalization id="46">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="47">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <association id="48">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="49" name="dependents"/>      
+      <multiplicity id="50" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
