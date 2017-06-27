@@ -33,7 +33,7 @@ public class LoanCommand extends Command {
 		AccountUser user = data.getKey();
 		if (!user.isEmpty()) {
 			NumberFormat numberFormat = NumberFormat.getNumberInstance(new Locale("pt", "BR"));
-			String valueText = readValue("Valor informar o valor de empréstimo", "Valor inválido!", DECIMAL_PATTERN);
+			String valueText = readValue("Favor informar o valor de empréstimo", "Valor inválido!", DECIMAL_PATTERN);
 			Double value = null;
 			while(value == null) {
 				try {

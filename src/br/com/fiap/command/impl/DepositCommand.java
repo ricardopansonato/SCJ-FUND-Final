@@ -33,7 +33,7 @@ public class DepositCommand extends Command {
 		if (!user.isEmpty()) {
 			Double value = null;
 			NumberFormat numberFormat = NumberFormat.getNumberInstance(new Locale("pt", "BR"));
-			String valueText = readValue("Valor informar o valor que deve ser depositado", "Valor inválido!", DECIMAL_PATTERN);
+			String valueText = readValue("Favor informar o valor que deve ser depositado", "Valor inválido!", DECIMAL_PATTERN);
 			while(value == null) {
 				try {
 					value = numberFormat.parse(valueText).doubleValue();
