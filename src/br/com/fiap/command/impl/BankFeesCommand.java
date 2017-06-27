@@ -21,8 +21,8 @@ import br.com.fiap.model.AccountUser;
 
 public class BankFeesCommand extends Command {
 
-	public BankFeesCommand(TelegramBot bot, Update update) {
-		super(bot, update);
+	public BankFeesCommand(TelegramBot bot, Update update, Long chatId) {
+		super(bot, update, chatId);
 	}
 
 	@Override

@@ -12,8 +12,8 @@ import br.com.fiap.model.AccountUser;
 
 public class WelcomeCommand extends Command {
 	
-	public WelcomeCommand(TelegramBot bot, Update update) {
-		super(bot, update);
+	public WelcomeCommand(TelegramBot bot, Update update, Long chatId) {
+		super(bot, update, chatId);
 	}
 
 	@Override

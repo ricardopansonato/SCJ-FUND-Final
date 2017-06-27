@@ -20,8 +20,8 @@ import br.com.fiap.model.AccountUser;
 
 public class DepositCommand extends Command {
 
-	public DepositCommand(TelegramBot bot, Update update) {
-		super(bot, update);
+	public DepositCommand(TelegramBot bot, Update update, Long chatId) {
+		super(bot, update, chatId);
 	}
 
 	@Override

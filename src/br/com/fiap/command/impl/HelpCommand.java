@@ -10,8 +10,8 @@ import br.com.fiap.command.Command;
 
 public class HelpCommand extends Command {
 		
-	public HelpCommand(TelegramBot bot, Update update) {
-		super(bot, update);
+	public HelpCommand(TelegramBot bot, Update update, Long chatId) {
+		super(bot, update, chatId);
 	}
 
 	public void execute() {

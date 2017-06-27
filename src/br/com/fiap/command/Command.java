@@ -32,10 +32,12 @@ public abstract class Command {
 	protected TelegramBot bot;
 	protected Update update;
 	protected TelegramFileDAO dao = new TelegramFileDAO();
+	protected Long chatId;
 
-	public Command(TelegramBot bot, Update update) {
+	public Command(TelegramBot bot, Update update, Long chatId) {
 		this.bot = bot;
 		this.update = update;
+		this.chatId = chatId;
 	}
 
 	public abstract void execute();
@@ -59,16 +61,18 @@ public abstract class Command {
 	}
 
 	private String retrieveValue(String error, String pattern, AccountUser user) {
-		GetUpdatesResponse updates = bot.execute(new GetUpdates().limit(100).offset(user.getPosition()));
+		GetUpdatesResponse updates = bot.execute(new GetUpdates().limit(100).offset(user.getPosition()).allowedUpdates("message"));
 		Long chatId = update.message().chat().id();
 		String toReturn = StringUtils.EMPTY;
 		if (updates.updates() != null && !updates.updates().isEmpty()) {
 			for (Update u : updates.updates()) {
-				toReturn = u.message().text();
-				user.addPosition();
-				dao.addUser(chatId, user);
-				if (!toReturn.matches(pattern)) {
-					bot.execute(new SendMessage(chatId, error).parseMode(ParseMode.Markdown));
+				if (this.chatId.equals(u.message().chat().id())) {
+					toReturn = u.message().text();
+					user.addPosition();
+					dao.addUser(chatId, user);
+					if (!toReturn.matches(pattern)) {
+						bot.execute(new SendMessage(chatId, error).parseMode(ParseMode.Markdown));
+					}
 				}
 			}
 		}

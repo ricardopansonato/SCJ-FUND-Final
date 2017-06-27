@@ -16,8 +16,8 @@ import br.com.fiap.model.AccountUser;
 
 public class ShowAccountCommand extends Command {
 
-	public ShowAccountCommand(TelegramBot bot, Update update) {
-		super(bot, update);
+	public ShowAccountCommand(TelegramBot bot, Update update, Long chatId) {
+		super(bot, update, chatId);
 	}
 
 	@Override

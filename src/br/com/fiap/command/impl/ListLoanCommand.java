@@ -17,8 +17,8 @@ import br.com.fiap.model.LoanStatement;
 
 public class ListLoanCommand extends Command {
 	
-	public ListLoanCommand(TelegramBot bot, Update update) {
-		super(bot, update);
+	public ListLoanCommand(TelegramBot bot, Update update, Long chatId) {
+		super(bot, update, chatId);
 	}
 
 	@Override

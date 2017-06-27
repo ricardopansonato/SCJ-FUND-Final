@@ -20,8 +20,8 @@ import br.com.fiap.model.AccountUser;
 
 public class CreateDependentAccountCommand extends Command {
 
-	public CreateDependentAccountCommand(TelegramBot bot, Update update) {
-		super(bot, update);
+	public CreateDependentAccountCommand(TelegramBot bot, Update update, Long chatId) {
+		super(bot, update, chatId);
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class CreateDependentAccountCommand extends Command {
 		if (!user.isEmpty()) {
 			Dependent dependent = new Dependent();
 			
-			String name = readValue("Informe seu nome completo do dependente", 
+			String name = readValue("Informe o nome completo do dependente", 
 									"Tamanho de *nome* inválido! Deve ter no mínimo 3 caracteres!", NAME_PATTERN);
 			dependent.setName(name);
 			dependent.setCpf(readValue("Informe o CPF", 

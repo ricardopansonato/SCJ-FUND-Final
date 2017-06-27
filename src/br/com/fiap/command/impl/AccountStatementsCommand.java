@@ -18,8 +18,8 @@ import br.com.fiap.model.AccountUser;
 
 public class AccountStatementsCommand extends Command {
 	
-	public AccountStatementsCommand(TelegramBot bot, Update update) {
-		super(bot, update);
+	public AccountStatementsCommand(TelegramBot bot, Update update, Long chatId) {
+		super(bot, update, chatId);
 	}
 
 	@Override
